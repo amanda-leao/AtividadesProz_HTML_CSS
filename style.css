@@ -1,4 +1,3 @@
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -12,8 +11,8 @@ header {
     background-color: #0056b3; 
     color: #ffffff;
     text-align: center;
-    padding: 40px 20px; 
-    margin-bottom: 30px; 
+    padding: 40px 20px;
+    margin-bottom: 30px;
 }
 
 header h1 {
@@ -28,35 +27,43 @@ header p {
     opacity: 0.9;
 }
 
-header nav {
-    margin-top: 15px;
+.header-flex {
+    display: flex;                  
+    flex-direction: row;            
+    justify-content: space-between; 
+    align-items: center;         
+    flex-wrap: wrap;          
+    gap: 20px;                     
+    padding: 30px 40px;
 }
+.header-flex h1 { margin: 0; text-align: left; }
+.header-flex p { margin: 5px 0 0 0; text-align: left; }
 
-header nav a {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 8px 15px;
-    border-radius: 4px;
-    font-size: 0.9rem;
+.btn-voltar {
+    color: #0056b3 !important;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: background-color 0.3s ease;
 }
 
-header nav a:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    text-decoration: none;
+.btn-voltar:hover {
+    background-color: #f0f0f0;
+    text-decoration: none !important;
 }
-
 main {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto; 
     padding: 0 20px;
 }
-
 .conteudo-principal {
     background-color: #ffffff;
-    padding: 30px; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     margin-bottom: 30px;
 }
 
@@ -65,13 +72,36 @@ h2 {
     font-size: 1.8rem;
     margin-top: 0;
 }
+.flex-container {
+    display: flex;
+    flex-direction: row;           
+    align-items: center;           
+    gap: 40px;                      
+}
 
+.texto-bloco {
+    flex: 2;                        
+}
+
+.imagem-bloco {
+    flex: 1.2;                      
+    display: flex;
+    justify-content: center;
+}
 img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 20px auto; 
     border-radius: 6px;
+}
+.imagem-bloco img {
+    margin: 0;
+    width: 100%;
+    object-fit: cover;
+}
+.conteudo-principal > img {
+    margin: 20px auto;
+    max-width: 600px;
 }
 
 p {
@@ -83,7 +113,7 @@ p {
 a {
     color: #0056b3;
     font-weight: bold;
-    text-decoration: none; 
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
@@ -93,12 +123,17 @@ a:hover {
 }
 
 .link-container {
-    margin-top: 30px;
-    padding: 15px;
     background-color: #e9ecef;
     border-left: 5px solid #0056b3;
     border-radius: 4px;
+    padding: 5px 20px;
+    margin-bottom: 30px;
     text-align: center;
+}
+
+.link-container p {
+    text-align: center;
+    margin: 10px 0;
 }
 
 footer {
@@ -108,4 +143,21 @@ footer {
     color: #aaaaaa;
     font-size: 0.9rem;
     margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;   
+        gap: 20px;
+    }
+    
+    .header-flex {
+        flex-direction: column;     
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .header-flex h1, .header-flex p {
+        text-align: center;
+    }
 }
